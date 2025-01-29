@@ -1,0 +1,43 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { FaBitcoin } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-orange-500 to-white flex flex-col items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center text-white mb-8"
+      >
+        <h1 className="text-5xl font-bold">Bem-vindo à VIP.BET</h1>
+        <p className="text-lg mt-2">A melhor experiência de apostas online, segura e tecnológica!</p>
+      </motion.div>
+
+      <Card className="w-full max-w-md bg-white shadow-lg rounded-2xl p-6">
+        <CardContent>
+          <div className="flex flex-col space-y-4">
+            <Input placeholder="Digite seu e-mail" className="p-3 border rounded-md" />
+            <Input type="password" placeholder="Digite sua senha" className="p-3 border rounded-md" />
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl">Entrar</Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="mt-8 flex items-center space-x-3 bg-white px-4 py-2 rounded-full shadow-md"
+      >
+        <FaBitcoin className="text-orange-500 text-3xl" />
+        <span className="text-lg font-semibold">Aposte com Bitcoin e muito mais!</span>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Home;
